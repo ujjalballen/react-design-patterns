@@ -43,6 +43,13 @@ const UserProfileContainer = ({ userId }) => {
     fetchUserData()
   };
 
+
+  const handleUpdateUser = async(updateUserData) => {
+    console.log(updateUserData)
+
+    /// here we can update the data using the post id
+  }
+
   return (
     <UserProfilePresenter
       user={user}
@@ -50,6 +57,7 @@ const UserProfileContainer = ({ userId }) => {
       loading={loading}
       error={error}
       onRetry={handleRetry}
+      onUpdateUser={handleUpdateUser}
     />
   );
 };
