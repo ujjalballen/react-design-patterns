@@ -3,11 +3,18 @@ import { useRef, useState } from "react";
 function CounterWithRef() {
     const countRef = useRef(0); // persists between renders
     const [renderCount, setRenderCount] = useState(0); // for forcing re-renders
+    const [newCount, setNewCount] = useState(1);
+
 
     const increment = () => {
         countRef.current = countRef.current + 1; // update ref
         console.log("Ref Count:", countRef.current);
     };
+
+    
+    console.log(countRef)
+    console.log(newCount)
+
 
     return (
         <div className="flex justify-around w-full">
@@ -20,6 +27,12 @@ function CounterWithRef() {
                 <h2 className="text-2xl">Render Count: {renderCount}</h2>
                 <button className="bg-purple-500 text-white p-1 rounded" onClick={() => setRenderCount(renderCount + 1)}>
                     Force Re-render
+                </button>
+            </div>
+
+            <div>
+                <button className="bg-purple-500 text-white p-1 rounded" onClick={() => setNewCount(newCount + 1)}>
+                  New Count
                 </button>
             </div>
         </div>
