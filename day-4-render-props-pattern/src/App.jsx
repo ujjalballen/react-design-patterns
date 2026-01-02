@@ -1,6 +1,10 @@
 // import BikeTracker from "./components/messy/BikeTracker";
 // import CarTracker from "./components/messy/CarTracker";
-import MouseTracker from "./solve-with-pattern/MouseTracker";
+// import MouseTracker from "./solve-with-pattern/MouseTracker";
+
+import Toggle from "./task/Toggle";
+
+// import MouseTrackerWithChildren from "./solve-with-pattern/using-children/TrackerWithChildren";
 
 function App() {
   return (
@@ -8,7 +12,7 @@ function App() {
       {/* <CarTracker />
             <BikeTracker /> */}
 
-      {/* car */}
+      {/* car
       <MouseTracker
         render={(pos) => (
           <p>
@@ -18,13 +22,40 @@ function App() {
       />
 
       {/* bike */}
-      <MouseTracker
+      {/* <MouseTracker
         render={(pos) => (
           <p>
             🏍️ Bike is at ({pos.x}, {pos.y})
           </p>
         )}
+      />  */}
+
+      {/* <MouseTrackerWithChildren>
+        {(pos) => (
+          <p>
+            🏍️ Bike is at ({pos.x}, {pos.y})
+          </p>
+        )}
+      </MouseTrackerWithChildren>
+      <MouseTrackerWithChildren>
+        {(pos) => (
+          <p>
+            🚗 Car is at ({pos.x}, {pos.y})
+          </p>
+        )}
+      </MouseTrackerWithChildren> */}
+
+      <Toggle
+        backFunction={(isOpen, setIsOpen) => (
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-4 bg-amber-400 border-2 rounded-2xl"
+          >
+            Open Me
+          </button>
+        )}
       />
+
     </div>
   );
 }
